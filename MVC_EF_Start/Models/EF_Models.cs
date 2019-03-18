@@ -13,6 +13,7 @@ namespace MVC_EF_Start.Models
     public string type { get; set; }
     public string iexId { get; set; }
     public List<Equity> Equities { get; set; }
+    public List<UpperManagement> UpperManagements { get; set; }
   }
 
   public class Equity
@@ -32,6 +33,22 @@ namespace MVC_EF_Start.Models
     public float changeOverTime { get; set; }
     public string symbol { get; set; }
   }
+
+    public class UpperManagement
+    {
+        public int UpperManagementId { get; set; }
+
+        public string JobTitle { get; set; }
+
+        public string Salary { get; set; }
+
+        public string JoinDate;
+
+        public string Symbol { get; set; }
+
+        public string Name { get; set; }
+
+    }
 
   public class ChartRoot
   {

@@ -9,5 +9,6 @@ namespace MVC_EF_Start.DataAccess
 
     public DbSet<Company> Companies { get; set; }
     public DbSet<Equity> Equities { get; set; }
-  }
+    public DbSet<UpperManagement> UpperManagements { get; set; }
+    }
 }

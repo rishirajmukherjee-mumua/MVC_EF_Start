@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+@using MVC_EF_Start.Models
+@{
+    ViewBag.Title = "Spotify token";
+}
+
+<h2>Index</h2>
+
+@{
+    var token = (Token)ViewData["token"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DatabaseOperations Spotify Test</title>
+
+</head>
+<body>
+    <h2>Database operations successful</h2>
+    @token.AccessToken
+</body>
+</html>
