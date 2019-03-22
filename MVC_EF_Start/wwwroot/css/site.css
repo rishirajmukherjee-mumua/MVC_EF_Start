@@ -1,4 +1,115 @@
-﻿body {
-  padding-top: 50px;
-  padding-bottom: 20px;
+﻿
+/**
+Sample css code
+*/
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+/*body,
+html {
+  height: 100%;
+}*/
+* {
+    font-family: Arial, Verdana, sans-serif;
+    color: #665544;
+    text-align: center;
 }
+
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#content {
+    overflow: auto;
+}
+
+
+#nav, #feature, #footer, #header {
+    margin: 1%;
+}
+
+.column1, .column2, .column3 {
+    width: 31.3%;
+    float: left;
+    margin: 1%;
+}
+
+.column3 {
+    margin-right: 0%;
+}
+
+li {
+    display: inline;
+    padding: 0.5em;
+}
+
+#nav, #footer, #header {
+    /*background-color: aliceblue;*/
+    padding: 0.5em 0;
+}
+
+.p {
+    font-family: Arial, Verdana, sans-serif;
+    color: #513122;
+    text-align: center;
+}
+
+.p1 {
+    font-family: Arial, Verdana, sans-serif;
+    color: #513122;
+    text-align: center;
+}
+
+.p-footer {
+    font-family: Arial, Verdana, sans-serif;
+    color: #513122;
+    text-align: left;
+}
+
+#feature, .article {
+    height: 10em;
+    margin-bottom: 2em;
+    background-color: aliceblue;
+}
+
+
+/*Set background image*/
+.container {
+    background-image: url('../img/vintage_radio.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.85;
+}
+
+
+/* Position text in the middle */
+.middle {
+    position: absolute;
+    color: beige;
+    top: 70%;
+    left: 39%;
+    text-align: center;
+    font-size: 25px;
+}
+
+    /*Set circle in unordered list*/
+    .middle ul {
+        list-style-type: circle;
+    }
+
+        /*Set text inside li tag to left*/
+        .middle ul li {
+            text-align: left !important;
+        }
+
+            /*Set text color for a tag inside middle class and ul>li element*/
+            .middle ul li a {
+                color: beige;
+            }
+
+                /*Change text color and decoration for a tags inside middle class and ul>li element*/
+                .middle ul li a:hover {
+                    color: red;
+                    text-decoration: none;
+                }
