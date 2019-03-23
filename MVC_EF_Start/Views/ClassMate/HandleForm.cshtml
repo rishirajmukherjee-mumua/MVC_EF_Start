@@ -19,7 +19,39 @@
     }
 }
 
-@Html.DropDownListFor(m => m.saturdays, listItems, "--Select a State--")
+
+@{
+    List<SelectListItem> listItemsVacations = new List<SelectListItem>();
+    foreach (Vacation i in Model.vacations)
+    {
+        listItemsVacations.Add(new SelectListItem
+        {
+            Text = i.vacation,
+            Value = i.VacationId.ToString()
+        });
+    }
+}
+
+@{
+    List<SelectListItem> listItemsFoods = new List<SelectListItem>();
+    foreach (Food i in Model.foods)
+    {
+        listItemsFoods.Add(new SelectListItem
+        {
+            Text = i.food,
+            Value = i.FoodId.ToString()
+        });
+    }
+}
+
+@Html.DropDownListFor(m => m.saturdays, listItems, "--Select Your Ideal Saturday--")
+<br />
+@Html.DropDownListFor(m => m.vacations, listItemsVacations, "--Select Your Ideal Vacation--")
+<br />
+@Html.DropDownListFor(m => m.foods, listItemsFoods, "--Select Your Ideal Cuisine--")
+
+
+
 
 
 
