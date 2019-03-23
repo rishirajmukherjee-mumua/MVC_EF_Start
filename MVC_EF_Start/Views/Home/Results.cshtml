@@ -5,45 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./css/main.css" type="text/css" rel="stylesheet">
-    <title>Assignment - 3 about page</title>
+    <title>Assignment - 3 result page</title>
+</head>
+<head class="middle">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Genres', 'Selections'],
+          ['HipHop',     11],
+          ['Raggae',      2],
+          ['Country',  2],
+          ['Pop', 2],
+          ['Rock',    7]
+        ]);
+
+        var options = {
+          title: 'ISM6225 Survey Reuslts'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 
 
-
-<body>
-    <div id="header">
-        <div>
-            <h1>About Us</h1>
-            <h3>Raj</h3>
-            <img src="./img/rishinaj.jpg" />
-            <p>
-                Raj is the Director of Integrations and ERP at Hit Promotional Products. <br>
-                He has experience in software architecture and a demonstrated history of working in the<br>
-                marketing and advertising industry.<br>
-            </p>
-
-            <h3>Madye</h3>
-            <img src="./img/madye.jpg" />
-            <p>
-                Madye is a Microsoft Cloud Sales Specialist at Tech Data. Her role is assisting partners<br>
-                with navigating a wide range of security and productivity products as well as onboarding<br>
-                new partners.
-            </p>
-
-            <h3>Anwut</h3>
-            <img src="./img/anwut.jpg" />
-            <p>
-                Anwut Wasupan is a Data Analyst at Zelis Payments. His responsibilities involve support<br>
-                business department providing solutions through data analytics. He earned a bachelor’s degree <br>
-                in management information system from the University of South Florida.
-            </p>
+<body class="container">
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 
 
-        </div>
-
-
-    </div>
     <div id="footer">
         <p class="p-footer">&copy; Copyright 2019</p>
         <ul class="p-footer">
@@ -51,10 +48,9 @@
             <li><a href="result.html">Result</a></li>
             <li><a href="http://www.usf.edu">USF</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="projectplan.html">Project Plan</a></li>
         </ul>
 
     </div>
 </body>
-
 </html>

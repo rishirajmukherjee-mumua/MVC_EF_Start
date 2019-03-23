@@ -1,5 +1,4 @@
-﻿
-/**
+﻿/**
 Sample css code
 */
 /* Set height to 100% for body and html to enable the background image to cover the whole page: */
@@ -28,13 +27,13 @@ body {
     margin: 1%;
 }
 
-.column1, .column2, .column3 {
-    width: 31.3%;
+.column1, .column2, .column3, .column4 {
+    width: 23.25%;
     float: left;
     margin: 1%;
 }
 
-.column3 {
+.column4 {
     margin-right: 0%;
 }
 
@@ -54,9 +53,9 @@ li {
     text-align: center;
 }
 
-.p1 {
+.solidBackground {
     font-family: Arial, Verdana, sans-serif;
-    color: #513122;
+    background-color: beige;
     text-align: center;
 }
 
