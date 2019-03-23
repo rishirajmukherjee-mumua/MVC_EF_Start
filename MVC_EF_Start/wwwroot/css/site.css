@@ -1,4 +1,150 @@
-﻿body {
-  padding-top: 50px;
-  padding-bottom: 20px;
+﻿/**
+Sample css code
+*/
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+/*body,
+html {
+  height: 100%;
+}*/
+* {
+    font-family: Arial, Verdana, sans-serif;
+    color: #665544;
+    text-align: center;
 }
+
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#content {
+    overflow: auto;
+}
+
+
+#nav, #feature, #footer, #header {
+    margin: 1%;
+}
+
+.column1, .column2, .column3, .column4 {
+    width: 23.25%;
+    float: left;
+    margin: 1%;
+}
+
+.column4 {
+    margin-right: 0%;
+}
+
+li {
+    display: inline;
+    padding: 0.5em;
+}
+
+#nav, #footer, #header {
+    /*background-color: aliceblue;*/
+    padding: 0.5em 0;
+}
+
+.p {
+    font-family: Arial, Verdana, sans-serif;
+    color: #513122;
+    text-align: center;
+}
+
+p-frame {
+    width: 275px;
+    border: 2px solid#665544;
+    padding: 2px;
+}
+
+.solidBackground {
+    font-family: Arial, Verdana, sans-serif;
+    background-color: beige;
+    text-align: center;
+}
+
+.p-footer {
+    font-family: Arial, Verdana, sans-serif;
+    color: #513122;
+    text-align: left;
+}
+
+#feature, .article {
+    height: 10em;
+    margin-bottom: 2em;
+    background-color: aliceblue;
+}
+
+input {
+    font-size: 120%;
+    color: #5a5854;
+    background-color: #f2f2f2;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
+    input#submit {
+        color: #444444;
+        text-shadow: 0px 1px 1px #ffffff;
+        border-bottom: 2px solid #b2b2b2;
+        background-color: #b9e4e3;
+        background: -webkit-gradient(linear, left top, left bottom, from(#beeae9), to(#a8cfce));
+        background: -moz-linear-gradient(top, #beeae9, #a8cfce);
+        background: -o-linear-gradient(top, #beeae9, #a8cfce);
+        background: -ms-linear-gradient(top, #beeae9, #a8cfce);
+    }
+
+        input#submit:hover {
+            color: #333333;
+            border: 1px solid #a4a4a4;
+            border-top: 2px solid #b2b2b2;
+            background-color: #a0dbc4;
+            background: -webkit-gradient(linear, left top, left bottom, from(#a8cfce), to(#beeae9));
+            background: -moz-linear-gradient(top, #a8cfce, #beeae9);
+            background: -o-linear-gradient(top, #a8cfce, #beeae9);
+            background: -ms-linear-gradient(top, #a8cfce, #beeae9);
+        }
+
+/*Set background image*/
+.container {
+    background-image: url('../img/vintage_radio.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.85;
+}
+
+
+/* Position text in the middle */
+.middle {
+    position: absolute;
+    color: beige;
+    top: 70%;
+    left: 39%;
+    text-align: center;
+    font-size: 25px;
+}
+
+    /*Set circle in unordered list*/
+    .middle ul {
+        list-style-type: circle;
+    }
+
+        /*Set text inside li tag to left*/
+        .middle ul li {
+            text-align: left !important;
+        }
+
+            /*Set text color for a tag inside middle class and ul>li element*/
+            .middle ul li a {
+                color: beige;
+            }
+
+                /*Change text color and decoration for a tags inside middle class and ul>li element*/
+                .middle ul li a:hover {
+                    color: red;
+                    text-decoration: none;
+                }
