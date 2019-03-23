@@ -1,0 +1,27 @@
+﻿
+@model MVC_EF_Start.Models.ClassMateQuestions
+
+
+
+@{
+    ViewData["Title"] = "HandleForm";
+}
+
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (IdealSaturday i in Model.saturdays)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = i.idealSaturday,
+            Value = i.IdealSaturdayId.ToString()
+        });
+    }
+}
+
+@Html.DropDownListFor(m => m.saturdays, listItems, "--Select a State--")
+
+
+
+<h2>HandleForm</h2>
+

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,33 @@ namespace MVC_EF_Start.Controllers
         public ClassMateController(ApplicationDbContext context)
         {
             dbContext = context;
+        }
+
+        public IQueryable<Food> GetFoods()
+        {
+            return dbContext.Set<Food>();
+        }
+
+        public IQueryable<Vacation> GetVacations()
+        {
+            return dbContext.Set<Vacation>();
+        }
+
+        public IQueryable<IdealSaturday> GetIdealSaturdays()
+        {
+            return dbContext.Set<IdealSaturday>();
+        }
+
+        public async Task<ViewResult> HandleForm()
+        {
+            ClassMateQuestions classMateQuestions = new ClassMateQuestions();
+            List<Food> allfoods = GetFoods().ToList();
+            List<Vacation> vacations = GetVacations().ToList();
+            List<IdealSaturday> idealSaturdays = GetIdealSaturdays().ToList();
+            classMateQuestions.saturdays = idealSaturdays;
+            classMateQuestions.vacations = vacations;
+            classMateQuestions.foods = allfoods;
+            return View(classMateQuestions);
         }
 
         public async Task<ViewResult> CreateClassMates()
