@@ -9,75 +9,77 @@
 </head>
 <body class="container">
     <div id="header">
-        <div>
-            <h1>Classmate Recommender</h1>
-            <h2>Who are you most similar to in our class?</h2>
-
-        </div>
-
-
+        <h1>Classmate Recommender</h1>
+        <h2>Who are you most similar to in our class?</h2>
     </div>
-    <div id="content">
-        <div id="feature">
-            <p>User Info</p>
-            <label for="name" class="title">Name:</label>
-            <input type="text" name="studentName" required="required" />
-            <br /><br />
-            <span class="title">Gender:</span>
-            <input type="radio" name="gender" id="male" value="M" />
-            <label for="male">M</label>
-            <input type="radio" name="gender" id="female" value="F" />
-            <label for="female">F</label><br />
-            <br />
-            <input type="submit" value="Register" id="submit" />
-        </div>
-        <div class="article column1">
-            <br />
-            <p>Choose an Artist</p>
-            <select artistName="artist">
-                <option value="a1">Artist 1</option>
-                <option value="a2">Artist 2</option>
-                <option value="a3">Artist 3</option>
-                <option value="a4">Artist 4</option>
-            </select>
-            <br />
-        </div>
-        <div class="article column2">
-            <br />
-            <p>Choose a Song</p>
-            <select name="Song">
-                <option value="s1">Song 1</option>
-                <option value="s2">Song 2</option>
-                <option value="s3">Song 3</option>
-                <option value="s4">Song 4</option>
-            </select>
-            <br />
-        </div>
-        <div class="article column3">
-            <br />
-            <p>Choose a Genre</p>
-            <select name="genre">
-                <option value="g1">Hip Hop</option>
-                <option value="g2">Raggae</option>
-                <option value="g3">Country</option>
-                <option value="g4">Rock</option>
-                <option value="g5">Pop</option>
-            </select>
-            <br />
-        </div>
-        <div class="article column4">
-            <br />
-            <p>Choose Food</p>
-            <select name="genre">
-                <option value="g1">Hip Hop</option>
-                <option value="g2">Raggae</option>
-                <option value="g3">Country</option>
-                <option value="g4">Rock</option>
-                <option value="g5">Pop</option>
-            </select>
-            <br />
-        </div>
+    <div id="feature">
+        <h2>Welcome</h2>
+        <label for="name" class="title">Name:</label>
+        <label for="name" class="title"><p-frame>Student Name_Here</p-frame></label>
+        <br />
+        <br />
+        <label for="Gender" class="title">Gender:</label>
+        <input type="radio" name="gender" value="M" />Male
+        <input type="radio" name="gender" value="F" />Female
+        <br />
     </div>
+    <div class="article column1">
+        <br />
+        <label for="input" class="title">Artist/Album:</label>
+        <input type="text" name="input" size="10" maxlength="20" />
+        <br />
+        <br />
+        <label for="song" class="title">song:</label>
+        <select name="Food">
+            <option value="s1">song 1</option>
+            <option value="s2">song 2</option>
+            <option value="s3">song 3</option>
+            <option value="s4">song 4</option>
+            <option value="s5">song 5</option>
+            <option value="s6">song 6</option>
+
+        </select>
+        <br />
+    </div>
+    <div class="article column2">
+        <br />
+        <p>Select your favorite type of food</p>
+        <select name="Food">
+            <option value="f1">American</option>
+            <option value="f2">Asian</option>
+            <option value="f3">French</option>
+            <option value="f4">Italian</option>
+            <option value="f5">Middle Eastern</option>
+            <option value="f6">Latin American</option>
+
+        </select>
+        <br />
+    </div>
+    <div class="article column3">
+        <br />
+        <p>Vacation Preference</p>
+        <select name="vacation">
+            <option value="g1">Cultural (food, art, history)</option>
+            <option value="g2">Backpacking</option>
+            <option value="g3">Luxury getaway</option>
+            <option value="g4">Cruise</option>
+            <option value="g5">Staycation</option>
+
+        </select>
+        <br />
+    </div>
+    <div class="article column4">
+        <br />
+        <p>Ideal Saturday</p>
+        <select name="Sat">
+            <option value="s1">Outdoor activities</option>
+            <option value="s2">Stay in and watch movies</option>
+            <option value="s3"> Go out to the bars</option>
+
+        </select>
+        <br />
+    </div>
+    <input type="submit" value="Register" id="submit" />
     <div id="footer">
         <p class="p-footer">&copy; Copyright 2019</p>
         <ul class="p-footer">
