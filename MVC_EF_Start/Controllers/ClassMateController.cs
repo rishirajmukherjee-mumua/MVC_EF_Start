@@ -23,9 +23,63 @@ namespace MVC_EF_Start.Controllers
 
         public async Task<ViewResult> CreateClassMates()
         {
-            loadAndSaveCsvFile();
+            //loadAndSaveCsvFile();
+            //loadFood();
+            loadVacations();
+            loadIdealSaturdays();
             return View();
         }
+
+        public void loadIdealSaturdays()
+        {
+            using (var reader = new StreamReader(@"C:\usf\idealsaturday.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+                    IdealSaturday saturday = new IdealSaturday();
+                    saturday.idealSaturday = values[0];
+                    dbContext.IdealSaturdays.Add(saturday);
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
+        public void loadVacations()
+        {
+            using (var reader = new StreamReader(@"C:\usf\vacations.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+                    Vacation vacation = new Vacation();
+                    vacation.vacation = values[0];
+                    dbContext.Vacations.Add(vacation);
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
+        public void loadFood()
+        {
+            using (var reader = new StreamReader(@"C:\usf\food.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+                    Food food = new Food();
+                    food.food = values[0];
+                    dbContext.Foods.Add(food);
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
+
+
 
         public void loadAndSaveCsvFile()
         {
