@@ -3,55 +3,77 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVC_EF_Start.Models
 {
-  public class Company
-  {
-    [Key]
-    public string symbol { get; set; }
-    public string name { get; set; }
-    public string date { get; set; }
-    public bool isEnabled { get; set; }
-    public string type { get; set; }
-    public string iexId { get; set; }
-    public List<Equity> Equities { get; set; }
-    public List<UpperManagement> UpperManagements { get; set; }
-  }
+   
 
-  public class Equity
-  {
-    public int EquityId { get; set; }
-    public string date { get; set; }
-    public float open { get; set; }
-    public float high { get; set; }
-    public float low { get; set; }
-    public float close { get; set; }
-    public int volume { get; set; }
-    public int unadjustedVolume { get; set; }
-    public float change { get; set; }
-    public float changePercent { get; set; }
-    public float vwap { get; set; }
-    public string label { get; set; }
-    public float changeOverTime { get; set; }
-    public string symbol { get; set; }
-  }
 
-    public class UpperManagement
+    public class ClassMate
     {
-        public int UpperManagementId { get; set; }
 
-        public string JobTitle { get; set; }
-
-        public string Salary { get; set; }
-
-        public string JoinDate;
-
-        public string Symbol { get; set; }
-
-        public string Name { get; set; }
-
+        public int ClassMateId { get; set; }
+        public string fullname { get; set; }
+        public string email { get; set; }
+        public string loginhash { get; set; }
+        public string symbol { get; set; }
+        public List<SongGenre> SongGenres {get; set;} 
+        public List<ClassMateFood> ClassMateFoods { get; set; }
+        public List<ClassMateVacation> ClassMateVacations { get; set; }
+        public List<IdealSaturdayClassMate> IdealSaturdayClassMates { get; set; }
     }
 
-  public class ChartRoot
-  {
-    public Equity[] chart { get; set; }
-  }
+    public class IdealSaturday
+    {
+        public int IdealSaturdayId { get; set; }
+        public string idealSaturday { get; set; }
+        public List<IdealSaturdayClassMate> IdealSaturdayClassMates { get; set; }
+    }
+
+    public class IdealSaturdayClassMate
+    {
+        public int IdealSaturdayClassMateId { get; set; }
+        public int ClassMateId { get; set; }
+        public int IdealSaturdayId { get; set; }
+    }
+
+
+    public class SongGenre
+    {
+
+        public int ClassMateId { get; set; }
+        public string genre { get; set; }
+        public int SongGenreId { get; set; }
+    }
+
+    public class Food
+    {
+        public int FoodId { get; set; }
+        public string food { get; set; }
+        public List<ClassMateFood> ClassMateFoods { get; set; }
+    }
+
+    public class ClassMateFood
+    {
+        public int ClassMateId { get; set; }
+        public int FoodId { get; set; }
+        public int ClassMateFoodId { get; set; }
+    }
+
+    public class Vacation
+    {
+        public int VacationId { get; set; }
+        public string vacation { get; set; }
+        public List<ClassMateVacation> ClassMateVacations { get; set; }
+    }
+
+    public class ClassMateVacation
+    {
+        public int ClassMateVacationId { get; set; }
+        public int VacationId { get; set; }
+        public int ClassMateId { get; set; }
+    }
+
+
+
+
+
+
 }
