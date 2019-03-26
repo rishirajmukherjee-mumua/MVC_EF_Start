@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVC_EF_Start.DataAccess;
 using MVC_EF_Start.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System.Web;
+
 
 namespace MVC_EF_Start.Controllers
 {
@@ -36,7 +40,10 @@ namespace MVC_EF_Start.Controllers
         {
             return dbContext.Set<IdealSaturday>();
         }
-
+        public IQueryable<EmailAddress> GetEmailAddress()
+        {
+            return dbContext.Set<EmailAddress>();
+        }
         public async Task<ViewResult> HandleForm()
         {
             ClassMateQuestions classMateQuestions = new ClassMateQuestions();
@@ -48,6 +55,42 @@ namespace MVC_EF_Start.Controllers
             classMateQuestions.foods = allfoods;
             return View(classMateQuestions);
         }
+
+        public async Task<String> SendEmail()
+        {
+
+            var apiKey = "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";
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("rishiraj@mail.usf.edu", "Group4App");
+            var subject = "This is a test";
+            var to = new EmailAddress();
+
+            List<ClassMate> emails = dbContext.ClassMates.ToList();
+
+            foreach (ClassMate cl in emails)
+            {
+                //cl.email
+                to = new EmailAddress(cl.email.ToString(), "Testing");
+                
+            }
+            var plainTextContent = "and easy to do anywhere, even with C#";
+            var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+            Console.WriteLine("Emailed" + response.ToString());
+            return response.ToString();
+
+            //var plainTextContent = "and easy to do anywhere, even with C#";
+            //var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
+            //var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            //var response = await client.SendEmailAsync(msg);
+            //Console.WriteLine("Emailed" + response.ToString());
+            //return response.ToString();
+
+
+        }
+
+
 
         public async Task<ViewResult> CreateClassMates()
         {
@@ -113,7 +156,7 @@ namespace MVC_EF_Start.Controllers
         {
             using (var reader = new StreamReader(@"C:\usf\Contact.csv"))
             {
-                
+
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
